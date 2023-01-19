@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -12,7 +13,7 @@ import android.widget.ImageView;
 
 import com.aditya.android.parkingtracker.R;
 
-public class SupportActivity extends AppCompatActivity implements View.OnClickListener{
+public class SupportActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnCall;
     Button btnSMS;
     Button btnEmail;
@@ -40,7 +41,7 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btnCall:
                 makeCall();
                 break;
@@ -55,29 +56,29 @@ public class SupportActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     //No permission required
-    private void makeCall(){
+    private void makeCall() {
         Intent intent = new Intent(Intent.ACTION_DIAL);
         intent.setData(Uri.parse("tel:7668157900"));
         startActivity(intent);
     }
 
     //No permission required
-    private void sendSMS(){
+    private void sendSMS() {
         Intent sendIntent = new Intent(Intent.ACTION_VIEW);
         sendIntent.setData(Uri.parse("sms:7668157900"));
         sendIntent.putExtra("sms_body", "Hey, we need help");
         startActivity(sendIntent);
     }
 
-    private void sendEmail(){
-        Intent emailIntent= new Intent(Intent.ACTION_SEND);
+    private void sendEmail() {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("text/plain");
 
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"support@parkme.com"});
 
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Help us");
 
-        emailIntent.putExtra( Intent.EXTRA_TEXT, "Please help us!!");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Please help us!!");
 
         emailIntent.setType("message/rfc822");
 

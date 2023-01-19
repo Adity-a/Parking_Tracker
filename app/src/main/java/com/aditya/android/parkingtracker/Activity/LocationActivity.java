@@ -2,11 +2,15 @@ package com.aditya.android.parkingtracker.Activity;
 
 import android.content.pm.PackageManager;
 import android.location.Location;
+
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
+
 import android.os.Bundle;
+
 import androidx.core.content.ContextCompat;
+
 import android.util.Log;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -105,7 +109,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                 mLastKnownLocation = null;
                 getLocationPermission();
             }
-        } catch (SecurityException e)  {
+        } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
     }
@@ -128,9 +132,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
                             assert mLastKnownLocation != null;
                             LatLng currentLocation = new LatLng(mLastKnownLocation.getLatitude(), mLastKnownLocation.getLongitude());
-                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation,DEFAULT_ZOOM));
+                            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, DEFAULT_ZOOM));
                             //mMap.addMarker(new MarkerOptions().position(currentLocation).title("Current Location"));
-
 
 
                             LatLng spotA = new LatLng(30.2845299, 78.0486342);
@@ -142,8 +145,8 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                             LatLng spotC = new LatLng(30.2843776, 78.0485350);
                             mMap.addMarker(new MarkerOptions().position(spotC).title("Spot C"));
 
-                            Log.v("Location",String.valueOf(mLastKnownLocation.getLatitude()));
-                            Log.v("Location",String.valueOf(mLastKnownLocation.getLongitude()));
+                            Log.v("Location", String.valueOf(mLastKnownLocation.getLatitude()));
+                            Log.v("Location", String.valueOf(mLastKnownLocation.getLongitude()));
                         } else {
                             Log.d("LocationActivity", "Current location is null. Using defaults.");
                             Log.e("LocationActivity", "Exception: %s", task.getException());
@@ -154,7 +157,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
                     }
                 });
             }
-        } catch(SecurityException e)  {
+        } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
     }

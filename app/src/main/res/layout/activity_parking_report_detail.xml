@@ -12,14 +12,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:text="@string/ReportDetailHeader"
             android:textAlignment="center"
             android:textColor="@color/Black"
             android:textSize="22sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -30,6 +32,7 @@
 
         <TextView
             android:id="@+id/txtEmail"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -40,10 +43,11 @@
 
         <TextView
             android:id="@+id/txtVEmail"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -55,20 +59,22 @@
 
         <TextView
             android:id="@+id/txtCarReceipt"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/CarPlateText"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewCarPlate"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -80,20 +86,22 @@
 
         <TextView
             android:id="@+id/txtCompanyRec"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/CarCompanyHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewCompany"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -107,18 +115,20 @@
             android:id="@+id/txtColorRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:text="@string/CarColorHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewColor"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -131,19 +141,21 @@
         <TextView
             android:id="@+id/txtHourRec"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:text="@string/HoursHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewHours"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -157,18 +169,20 @@
             android:id="@+id/txtDateRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:text="@string/DateAndTImeHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -182,18 +196,20 @@
             android:id="@+id/parkingTxtLot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:text="@string/LotHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewLot"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -206,19 +222,21 @@
         <TextView
             android:id="@+id/txtSpotRec"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:text="@string/SpotHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewSpot"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -232,18 +250,20 @@
             android:id="@+id/txtPaymentRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:text="@string/PaymentModeHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewPaymentMode"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 
@@ -255,20 +275,22 @@
 
         <TextView
             android:id="@+id/txtAmtRec"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/AmountHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/textViewAmount"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#03A9F4"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
     </LinearLayout>
 

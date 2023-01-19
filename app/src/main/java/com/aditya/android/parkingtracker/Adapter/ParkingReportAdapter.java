@@ -2,6 +2,7 @@ package com.aditya.android.parkingtracker.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ public class ParkingReportAdapter extends RecyclerView.Adapter<ParkingReportAdap
     final private ListItemClickListener mOnClickListener;
 
 
-    public ParkingReportAdapter(ArrayList<Receipt> receipts, ListItemClickListener listener){
+    public ParkingReportAdapter(ArrayList<Receipt> receipts, ListItemClickListener listener) {
         listOfReceipts = receipts;
         mOnClickListener = listener;
     }
@@ -54,7 +55,7 @@ public class ParkingReportAdapter extends RecyclerView.Adapter<ParkingReportAdap
         return listOfReceipts.size();
     }
 
-    public class ParkingReportViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ParkingReportViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView carNumber, dateTime, noOfHours;
 

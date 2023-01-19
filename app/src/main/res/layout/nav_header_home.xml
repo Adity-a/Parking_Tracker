@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:fontFamily="serif"
         android:text="@string/app_name"
         android:textColor="#fff"
         android:textSize="15dp"
@@ -34,6 +35,7 @@
         android:id="@+id/drawer_email"
         android:layout_width="wrap_content"
         android:layout_height="33dp"
+        android:fontFamily="serif"
         android:text="@string/EmailButtonHeader"
         android:textColor="#fff"
         android:textSize="15dp" />

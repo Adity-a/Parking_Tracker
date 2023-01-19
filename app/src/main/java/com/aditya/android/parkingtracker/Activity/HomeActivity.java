@@ -9,6 +9,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import android.util.Log;
 import android.view.View;
+
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -79,10 +80,10 @@ public class HomeActivity extends AppCompatActivity
 
         FirebaseUser user = mAuth.getCurrentUser();
         final String userId = user.getUid();
-        if(user != null) user.reload().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+        if (user != null) user.reload().addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if(!task.isSuccessful()) {
+                if (!task.isSuccessful()) {
                     String exc = task.getException().getMessage();
                     Log.e("FireBaseUser", exc);
                     mAuth.signOut();
@@ -112,8 +113,7 @@ public class HomeActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }
-        else {
+        } else {
             super.onBackPressed();
             overridePendingTransition(R.transition.slide_down, R.transition.slide_up);
             finish();

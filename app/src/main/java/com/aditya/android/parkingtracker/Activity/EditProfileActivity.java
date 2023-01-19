@@ -1,26 +1,54 @@
 package com.aditya.android.parkingtracker.Activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.aditya.android.parkingtracker.R;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.util.UUID;
 
 public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText name, email, contact, carPlate;
 
     private Spinner city;
+
+
+    private FirebaseStorage storage;
+
+    private StorageReference reference;
+
+
+    private FirebaseDatabase database;
+
+    private DatabaseReference myRef;
 
     private Button save, cancel;
 
@@ -42,6 +70,9 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         city = findViewById(R.id.userProfileEditSpinnerCityData);
         save = findViewById(R.id.profileEditBtnSave);
         cancel = findViewById(R.id.cancel);
+
+        storage = FirebaseStorage.getInstance("gs://parkingapp-22de1.appspot.com");
+        reference = storage.getReference();
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
@@ -53,6 +84,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         mAuth = FirebaseAuth.getInstance();
 
         save.setOnClickListener(this);
+
 
         Intent intent = getIntent();
         strName = intent.getStringExtra("name");
@@ -70,9 +102,11 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    private int getIndex(Spinner spinner, String myString){
-        for (int i=0;i<spinner.getCount();i++){
-            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)){
+
+
+    private int getIndex(Spinner spinner, String myString) {
+        for (int i = 0; i < spinner.getCount(); i++) {
+            if (spinner.getItemAtPosition(i).toString().equalsIgnoreCase(myString)) {
                 return i;
             }
         }
@@ -87,8 +121,8 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
             assert user != null;
             String userId = user.getUid();
 
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference().child("User").child(userId);
+            database = FirebaseDatabase.getInstance();
+            myRef = database.getReference().child("User").child(userId);
 
             myRef.child("car_number").setValue(carPlate.getText().toString());
             myRef.child("city").setValue(city.getSelectedItem().toString());

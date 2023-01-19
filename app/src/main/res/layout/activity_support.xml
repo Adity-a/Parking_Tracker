@@ -19,37 +19,42 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             app:srcCompat="@drawable/logo" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="20sp"
+                android:fontFamily="serif"
                 android:text="Park-With-Us"
                 android:gravity="top"
                 android:textColor="@color/Black"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
+                android:fontFamily="serif"
                 android:text="Graphic Era University"
                 android:gravity="left"
                 android:textColor="@color/Black"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
+                android:fontFamily="serif"
                 android:text="Uttrakhand"
                 android:gravity="left"
                 android:textColor="@color/Black"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -75,7 +80,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="+91 7668157900"
-            android:textSize="20dp"
+            android:fontFamily="serif"
+            android:textSize="20sp"
             android:textAlignment="textStart"
             android:textColor="@color/Black" />
 
@@ -98,10 +104,11 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:textAlignment="textStart"
             android:text="+91 7668157900"
-            android:textSize="20dp"
-            android:textColor="@color/Black"/>
+            android:textSize="20sp"
+            android:textColor="@color/Black" />
 
     </LinearLayout>
 
@@ -124,9 +131,10 @@
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textSize="20dp"
+            android:fontFamily="serif"
+            android:textSize="20sp"
             android:text="adityabalodi31@gmail.com"
-            android:textColor="#2196F3"/>
+            android:textColor="#2196F3" />
     </LinearLayout>
 
 </LinearLayout>

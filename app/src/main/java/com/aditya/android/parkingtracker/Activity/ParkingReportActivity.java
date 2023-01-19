@@ -1,11 +1,15 @@
 package com.aditya.android.parkingtracker.Activity;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.WindowManager;
 
@@ -73,7 +77,7 @@ public class ParkingReportActivity extends AppCompatActivity implements ParkingR
     }
 
     void updateDisplay() {
-        if (!listOfReceipts.isEmpty()){
+        if (!listOfReceipts.isEmpty()) {
             ParkingReportAdapter adapter = new ParkingReportAdapter(listOfReceipts, this);
             adapter.notifyDataSetChanged();
             parkingReport.setAdapter(adapter);

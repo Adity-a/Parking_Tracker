@@ -1,7 +1,9 @@
 package com.aditya.android.parkingtracker.Activity;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +23,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class GoogleSignInExtraActivity extends AppCompatActivity implements View.OnClickListener{
+public class GoogleSignInExtraActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText phone, carPlate;
     private Spinner city;
@@ -55,10 +57,10 @@ public class GoogleSignInExtraActivity extends AppCompatActivity implements View
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.registerExtraBtnRegister:
                 extractData();
-                if (veriftData()){
+                if (veriftData()) {
                     //Data is valid
 
                     FirebaseUser user = mAuth.getCurrentUser();
@@ -91,16 +93,16 @@ public class GoogleSignInExtraActivity extends AppCompatActivity implements View
         }
     }
 
-    void extractData(){
+    void extractData() {
         strPhone = phone.getText().toString();
         strCarPlate = carPlate.getText().toString();
         strCity = city.getSelectedItem().toString();
     }
 
-    boolean veriftData(){
+    boolean veriftData() {
         boolean isDataTrue = true;
 
-        if (strCity.isEmpty() || strCarPlate.isEmpty() || strPhone.isEmpty()){
+        if (strCity.isEmpty() || strCarPlate.isEmpty() || strPhone.isEmpty()) {
             isDataTrue = false;
         }
 

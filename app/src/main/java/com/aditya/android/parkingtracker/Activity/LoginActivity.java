@@ -4,9 +4,11 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -81,7 +83,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .build();
 
         googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this,this)
+                .enableAutoManage(this, this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
@@ -89,10 +91,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.loginBtnLogin:
                 extractData();
-                if(dataValidate()){
+                if (dataValidate()) {
                     mAuth.signInWithEmailAndPassword(strEmail, strPassword)
                             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -101,7 +103,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         // Sign in success, update UI with the signed-in user's information
                                         //Log.d(TAG, "signInWithEmail:success");
                                         FirebaseUser user = mAuth.getCurrentUser();
-                                        Intent loginIntent = new Intent(LoginActivity.this,HomeActivity.class);
+                                        Intent loginIntent = new Intent(LoginActivity.this, HomeActivity.class);
                                         startActivity(loginIntent);
                                         overridePendingTransition(R.transition.animation_resource, R.transition.animation_resource);
                                         finish();
@@ -120,7 +122,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.loginBtnRegister:
                 Toast.makeText(this, "Register Clicked", Toast.LENGTH_SHORT).show();
-                Intent registerIntent = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(registerIntent);
                 finish();
                 break;
@@ -135,22 +137,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void showRecoverPasswordDialog() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Reset Password");
-        LinearLayout linearLayout=new LinearLayout(this);
-        final EditText emailet= new TextInputEditText(this);
+        LinearLayout linearLayout = new LinearLayout(this);
+        final EditText emailet = new TextInputEditText(this);
 
         emailet.setHint("Email");
         emailet.setMinEms(16);
         emailet.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         linearLayout.addView(emailet);
-        linearLayout.setPadding(10,20,10,20);
+        linearLayout.setPadding(10, 20, 10, 20);
         builder.setView(linearLayout);
 
         builder.setPositiveButton("Reset", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String email=emailet.getText().toString().trim();
+                String email = emailet.getText().toString().trim();
                 beginRecovery(email);
             }
         });
@@ -174,39 +176,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 loadingBar.dismiss();
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(LoginActivity.this,"Password Reset Email has Been Sent!!!",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(LoginActivity.this,"Error Occurred",Toast.LENGTH_LONG).show();
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Password Reset Email has Been Sent!!!", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Error Occurred", Toast.LENGTH_LONG).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 loadingBar.dismiss();
-                Toast.makeText(LoginActivity.this,"Error Failed",Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Error Failed", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    void extractData(){
+    void extractData() {
         strEmail = edtEmail.getText().toString();
         strPassword = edtPassword.getText().toString();
     }
 
-    boolean dataValidate(){
+    boolean dataValidate() {
         boolean isDataValid = true;
 
-        if (strEmail.equals("") || strPassword.equals("")){
+        if (strEmail.equals("") || strPassword.equals("")) {
             isDataValid = false;
         }
 
         return isDataValid;
     }
 
-    void signIn(){
+    void signIn() {
         Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -265,14 +265,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
     }
 
-    void checkIfFirstTimeLogin(){
+    void checkIfFirstTimeLogin() {
         String userId = mAuth.getUid();
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference().child("User").child(userId);
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
+                if (dataSnapshot.exists()) {
                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                     startActivity(intent);
                     overridePendingTransition(R.transition.animation_resource, R.transition.animation_resource);

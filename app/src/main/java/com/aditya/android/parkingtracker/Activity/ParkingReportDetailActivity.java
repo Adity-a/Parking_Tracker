@@ -1,7 +1,9 @@
 package com.aditya.android.parkingtracker.Activity;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ public class ParkingReportDetailActivity extends AppCompatActivity {
 
     private TextView txtViewEmail, txtViewCarPlate, txtViewCompany, txtViewColor, txtViewHours, txtViewDateTime, txtViewLot, txtViewSpot, txtViewPayment, txtViewAmount;
     Receipt receipt = new Receipt();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

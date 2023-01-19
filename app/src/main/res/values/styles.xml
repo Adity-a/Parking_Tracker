@@ -8,9 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowNoTitle">true</item>
 
-       <!-- <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
-        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/slide_up</item>
-        <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/slide_down</item> -->
+        <!-- <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
+         <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/slide_up</item>
+         <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/slide_down</item> -->
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

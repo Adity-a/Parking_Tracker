@@ -15,6 +15,7 @@
 
         <TextView
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:text="@string/ReceiptHeader"
             android:textAlignment="center"
@@ -33,6 +34,7 @@
             android:id="@+id/txtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:layout_weight="1"
             android:text="@string/EmailText"
             android:textColor="@color/Black"
@@ -42,6 +44,7 @@
         <TextView
             android:id="@+id/txtVEmail"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#03A9F4" />
@@ -56,6 +59,7 @@
 
         <TextView
             android:id="@+id/txtCarReceipt"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,6 +70,7 @@
 
         <TextView
             android:id="@+id/textViewCarPlate"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -81,6 +86,7 @@
 
         <TextView
             android:id="@+id/txtCompanyRec"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,6 +97,7 @@
 
         <TextView
             android:id="@+id/textViewCompany"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -108,6 +115,7 @@
             android:id="@+id/txtColorRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:layout_weight="1"
             android:text="@string/CarColorHeader"
             android:textColor="@color/Black"
@@ -117,6 +125,7 @@
         <TextView
             android:id="@+id/textViewColor"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#03A9F4" />
@@ -132,6 +141,7 @@
         <TextView
             android:id="@+id/txtHourRec"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/HoursHeader"
@@ -142,6 +152,7 @@
         <TextView
             android:id="@+id/textViewHours"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#03A9F4" />
@@ -159,6 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="serif"
             android:text="@string/DateAndTImeHeader"
             android:textColor="@color/Black"
             android:textSize="18sp"
@@ -166,6 +178,7 @@
 
         <TextView
             android:id="@+id/textViewDate"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -183,6 +196,7 @@
             android:id="@+id/parkingTxtLot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:layout_weight="1"
             android:text="@string/LotHeader"
             android:textColor="@color/Black"
@@ -191,6 +205,7 @@
 
         <TextView
             android:id="@+id/textViewLot"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -206,6 +221,7 @@
 
         <TextView
             android:id="@+id/txtSpotRec"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -216,6 +232,7 @@
 
         <TextView
             android:id="@+id/textViewSpot"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -232,6 +249,7 @@
         <TextView
             android:id="@+id/txtPaymentRec"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/PaymentModeHeader"
@@ -242,6 +260,7 @@
         <TextView
             android:id="@+id/textViewPaymentMode"
             android:layout_width="match_parent"
+            android:fontFamily="serif"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="#03A9F4" />
@@ -258,6 +277,7 @@
             android:id="@+id/txtAmtRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="serif"
             android:layout_weight="1"
             android:text="@string/AmountHeader"
             android:textColor="@color/Black"
@@ -266,6 +286,7 @@
 
         <TextView
             android:id="@+id/textViewAmount"
+            android:fontFamily="serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -31,7 +32,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class ParkingActivity extends AppCompatActivity implements View.OnClickListener{
+public class ParkingActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputEditText email, carPlate, amount, dateTime;
     private Spinner carCompany, carColor, paymentMode, spotNumber, lotNumber;
@@ -120,7 +121,7 @@ public class ParkingActivity extends AppCompatActivity implements View.OnClickLi
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (s != null && !s.toString().equalsIgnoreCase("")){
+                if (s != null && !s.toString().equalsIgnoreCase("")) {
                     int value = Integer.parseInt(s.toString());
                     int amountValue = value * 10;
                     amount.setText(String.valueOf(amountValue));
@@ -167,17 +168,17 @@ public class ParkingActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    boolean checkData(){
+    boolean checkData() {
         boolean isDataTrue = true;
 
-        if (parkingEtNoHours.getText().toString().equals("")){
+        if (parkingEtNoHours.getText().toString().equals("")) {
             isDataTrue = false;
         }
 
         return isDataTrue;
     }
 
-    void extractData(){
+    void extractData() {
         strEmail = email.getText().toString();
         strCarPlate = carPlate.getText().toString();
         strCarCompany = carCompany.getSelectedItem().toString();

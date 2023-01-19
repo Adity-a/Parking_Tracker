@@ -1,19 +1,19 @@
 package com.aditya.android.parkingtracker.Activity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.aditya.android.parkingtracker.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -22,10 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.aditya.android.parkingtracker.R;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
-import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,11 +37,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private TextInputEditText name, email, password, phoneNumber, carNumber;
     private Spinner city;
-    private ImageView uploadProfileImage;
-    private final int PICK_IMAGE_CAMERA = 1, PICK_IMAGE_GALLERY = 2;
-    private Bitmap bitmap;
+    private FirebaseStorage storage;
+    private StorageReference reference;
+    private Uri imageUri;
     private File destination = null;
-    private InputStream inputStreamImg;
     private String strName, strEmail, strPassword, strPhoneNumber, strCarNumber, strCity;
    /* private KeyGenerator keyGenerator;
     private SecretKey secretKey;
@@ -58,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Button btnNewRegister = findViewById(R.id.registerBtnRegister);
-        uploadProfileImage = findViewById(R.id.imageSupport);
         name = findViewById(R.id.registerEtName);
         email = findViewById(R.id.registerEtEmail);
         password = findViewById(R.id.registerEtPassword);
@@ -67,9 +65,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         city = findViewById(R.id.registerSpinnerCity);
 
         mAuth = FirebaseAuth.getInstance();
+        storage = FirebaseStorage.getInstance("gs://parkingapp-22de1.appspot.com");
+        reference = storage.getReference();
 
         btnNewRegister.setOnClickListener(this);
-        uploadProfileImage.setOnClickListener(this);
 
         //Key generation for AES Algo
         /*try {
@@ -83,33 +82,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         random.nextBytes(IV);*/
 
     }
-   /* public static byte[] encrypt(byte[] plaintext, SecretKey key, byte[] IV) throws Exception {
-        Cipher cipher = Cipher.getInstance("AES");
-        SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
-        IvParameterSpec ivSpec = new IvParameterSpec(IV);
-        cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
-        byte[] cipherText = cipher.doFinal(plaintext);
-        return cipherText;
-    }
-    public static String decrypt(byte[] cipherText, SecretKey key, byte[] IV) {
-        try {
-            Cipher cipher = Cipher.getInstance("AES");
-            SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
-            IvParameterSpec ivSpec = new IvParameterSpec(IV);
-            cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec);
-            byte[] decryptedText = cipher.doFinal(cipherText);
-            return new String(decryptedText);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }*/
+
+    /* public static byte[] encrypt(byte[] plaintext, SecretKey key, byte[] IV) throws Exception {
+             Cipher cipher = Cipher.getInstance("AES");
+             SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
+             IvParameterSpec ivSpec = new IvParameterSpec(IV);
+             cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
+             byte[] cipherText = cipher.doFinal(plaintext);
+             return cipherText;
+         }
+         public static String decrypt(byte[] cipherText, SecretKey key, byte[] IV) {
+             try {
+                 Cipher cipher = Cipher.getInstance("AES");
+                 SecretKeySpec keySpec = new SecretKeySpec(key.getEncoded(), "AES");
+                 IvParameterSpec ivSpec = new IvParameterSpec(IV);
+                 cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec);
+                 byte[] decryptedText = cipher.doFinal(cipherText);
+                 return new String(decryptedText);
+             } catch (Exception e) {
+                 e.printStackTrace();
+             }
+             return null;
+         }*/
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.registerBtnRegister:
                 extractData();
-                if (verifyData()){
+                if (verifyData()) {
                     mAuth.createUserWithEmailAndPassword(strEmail, strPassword)
                             .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -158,18 +158,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     Toast.makeText(this, "Error in the form", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.imageSupport:
-                imageUpload();
             default:
                 break;
         }
     }
 
-    private void imageUpload() {
 
-    }
-
-    void extractData(){
+    void extractData() {
        /* try{
             byte[] encrypt1 = encrypt(Objects.requireNonNull(name.getText()).toString().getBytes(), secretKey, IV);
             byte[] encrypt2 = encrypt(Objects.requireNonNull(password.getText()).toString().getBytes(), secretKey, IV);
@@ -194,10 +189,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         strCity = city.getSelectedItem().toString();
     }
 
-    boolean verifyData(){
+    boolean verifyData() {
         boolean isDataTrue = true;
 
-        if (strName.isEmpty() || strEmail.isEmpty() || strPassword.isEmpty() || strPhoneNumber.isEmpty() || strCarNumber.isEmpty() || strCity.isEmpty()){
+        if (strName.isEmpty() || strEmail.isEmpty() || strPassword.isEmpty() || strPhoneNumber.isEmpty() || strCarNumber.isEmpty() || strCity.isEmpty()) {
             isDataTrue = false;
         }
 

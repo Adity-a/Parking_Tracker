@@ -19,7 +19,7 @@ public class User {
         this.number = number;
     }
 
-    public User(){
+    public User() {
 
     }
 
@@ -31,7 +31,7 @@ public class User {
         this.car_number = car_number;
     }
 
-    public  String getCity() {
+    public String getCity() {
         return city;
     }
 
