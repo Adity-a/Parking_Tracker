@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "864175530849",
+    "firebase_url": "https://parkingapp-22de1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "parkingapp-22de1",
+    "storage_bucket": "parkingapp-22de1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:864175530849:android:6549a892def052eeb75b20",
+        "android_client_info": {
+          "package_name": "com.aditya.android.parkingtracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "864175530849-nt2g886br094ie46ip2knn4cjso2r6ik.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.aditya.android.parkingtracker",
+            "certificate_hash": "a601eca2b97258cdfe332b71342c00974179db0c"
+          }
+        },
+        {
+          "client_id": "864175530849-cb3l98389r8mk602q48g5b88tsklgn8p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpPhEWRh_9Fhms7TNrKe0DlTjqAYy7g9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "864175530849-cb3l98389r8mk602q48g5b88tsklgn8p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

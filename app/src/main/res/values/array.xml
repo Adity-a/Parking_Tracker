@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cityArray">
+        <item>Dehradun</item>
+        <item>Haridwar</item>
+        <item>Roorkee</item>
+        <item>Haldwani</item>
+        <item>Rudrapur</item>
+        <item>Kashipur</item>
+        <item>Rishikesh</item>
+    </string-array>
+    <string-array name="carName">
+        <item>Maruti Suzuki</item>
+        <item>Audi</item>
+        <item>Mercedes</item>
+        <item>Hyundai</item>
+        <item>Toyota</item>
+        <item>Kia</item>
+        <item>Skoda</item>
+        <item>Volkswagen</item>
+        <item>Honda</item>
+        <item>Renault</item>
+        <item>Mahindra</item>
+        <item>Jeep</item>
+        <item>Ford</item>
+        <item>Nissan</item>
+        <item>Datsun</item>
+        <item>Tesla</item>
+    </string-array>
+    <string-array name="paymentMethod">
+        <item>Debit</item>
+        <item>Visa</item>
+        <item>Master card</item>
+        <item>American Express</item>
+    </string-array>
+    <string-array name="lots">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </string-array>
+    <string-array name="spots">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="carColor">
+        <item>Red</item>
+        <item>Black</item>
+        <item>White</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+    </string-array>
+</resources>
