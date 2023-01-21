@@ -31,7 +31,7 @@ public class LocationActivity extends FragmentActivity implements OnMapReadyCall
 
     private GoogleMap mMap;
 
-    private final LatLng mDefaultLocation = new LatLng(30.284400, 78.048458);
+    private final LatLng mDefaultLocation = new LatLng(30.2845299, 78.0486342);
 
     private static final int DEFAULT_ZOOM = 18;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
