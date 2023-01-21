@@ -110,7 +110,7 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -138,7 +138,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_parking_manual) {
             Intent manualIntent = new Intent(HomeActivity.this, ManualActivity.class);
             startActivity(manualIntent);
-            overridePendingTransition(R.transition.slide_in_right, R.transition.slide_out_right);
+            overridePendingTransition(R.transition.slide_in_left, R.transition.slide_out_left);
 
         } else if (id == R.id.nav_report) {
 
