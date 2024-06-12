@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "8143104943",
+    "firebase_url": "https://parkingapp-5e7e5-default-rtdb.firebaseio.com",
+    "project_id": "parkingapp-5e7e5",
+    "storage_bucket": "parkingapp-5e7e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8143104943:android:69d3d288fd4e0ade2e5d5a",
+        "android_client_info": {
+          "package_name": "com.android.talk.parkingtracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-wh2M9pnH__8vdv-H-5FWPMiyhlz_7Qo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
