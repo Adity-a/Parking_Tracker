@@ -21,7 +21,7 @@ The Parking Tracker App is an Android application designed to simplify the proce
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/parking-tracker-app.git
+git clone https://github.com/Adity-a/parking-tracker-app.git
 
 2. Open the project in Android Studio.
 
