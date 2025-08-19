@@ -10,14 +10,6 @@ The Parking Tracker App is an Android application designed to simplify the proce
 - **User Authentication**: Provides secure user authentication to ensure the privacy and security of user data.
 - **Feedback and Rating**: Allows users to provide feedback and ratings for their parking experience, helping to improve the service.
 
-## Screenshots
-
-<div style="display: flex; justify-content: center;">
-    <img src="Screenshots/login.jpeg" alt="Screenshot 1" style="margin-right: 10px;">
-    <img src="Screenshots/register.jpeg" alt="Screenshot 2" style="margin-right: 10px;">
-    <img src="Screenshots/Home.jpeg" alt="Screenshot 3">
-</div>
-
 ### Screenshots
 
 | Login | Register | Home | Google-Maps | Parking-Booking | Parking-Report | Manual |
