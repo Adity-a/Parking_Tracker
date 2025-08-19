@@ -18,6 +18,14 @@ The Parking Tracker App is an Android application designed to simplify the proce
     <img src="Screenshots/Home.jpeg" alt="Screenshot 3">
 </div>
 
+### Screenshots
+
+| Login | Register | Home | Google-Maps | Parking-Booking | Parking-Report | Manual |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ![App Screenshot 1](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/login.jpeg) | ![App Screenshot 2](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/register.jpeg) | ![App Screenshot 3](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/Home.jpeg) | ![App Screenshot 4](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/Google%20maps.jpeg) |![App Screenshot 5](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/Parking%20Booking.jpeg) | ![App Screenshot 6](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/Parking%20Reports.jpeg) | ![App Screenshot 7](https://github.com/Adity-a/Parking_Tracker/blob/main/Screenshots/parking%20Manual.jpeg) |
+
+---
+
 ## Installation
 
 1. Clone the repository:
